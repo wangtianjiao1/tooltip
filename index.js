@@ -1,15 +1,24 @@
-import Tooltip from './src/components/Tooltip.vue'
-import _Vue from 'vue'
-// 标签引入
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component('Tooltip',Tooltip)
-}
+import oneTooltip from '@/components/Tooltip.vue'
+// import Vue from 'vue'
 
-Tooltip.install = Vue => {
-if (!Vue) {
-window.Vue = Vue = _Vue
+// // 标签引入
+// if (typeof window !== 'undefined' && window.Vue) {
+//   window.Vue.component('Tooltip',Tooltip)
+// }
+
+// Tooltip.install = Vue => {
+// if (!Vue) {
+// window.Vue = Vue = _Vue
+// }
+// Vue.component(Tooltip.name, Tooltip)
+// }
+const components = {
+  install(Vue) {
+      Vue.component('one-tooltip', oneTooltip)
+  }
 }
-Vue.component(Tooltip.name, Tooltip)
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(components)
 }
-export default Tooltip;
+export default components;
 

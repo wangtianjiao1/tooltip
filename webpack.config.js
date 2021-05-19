@@ -9,8 +9,8 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     // filename: 'build.js',
-    filename: 'tooltip.js',
-    library: 'tooltip', // 使用require时的模块名
+    filename: 'one-tooltip.js',
+    library: 'one-tooltip', // 使用require时的模块名
     libraryTarget: 'umd', // 指定输出格式
     umdNamedDefine: true // 会对 UMD 的构建过程中的 AMD 模块进行命名。否则就使用匿名的 define
   },
@@ -64,7 +64,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  // devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -86,4 +86,6 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     })
   ])
+} else {
+    module.exports.devtool = '#eval-source-map'
 }
