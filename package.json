@@ -1,7 +1,7 @@
 {
   "name": "mine-tooltip",
   "description": "A simple tooltip component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "wangtianjiao",
   "license": "MIT",
   "private": false,
@@ -11,7 +11,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "keywords": [
-    "tooltip",
+    "mine-tooltip",
     "simple-tooltip"
   ],
   "files": [
