@@ -1,20 +1,20 @@
 # tooltip
 是一个基于vue的简单tooltip组件
-## Build Setup
+## 使用
 
 ``` bash
 # install dependencies
-npm i mine-tooltip
+npm i one-tooltip
 
-# 注册
-import tooltip from 'mine-tooltip'
-Vue.use(tooltip)
+# 全局引入
+import oneTooltip from 'one-tooltip'
+Vue.use(oneTooltip)
 
 #使用
-tooltip 属性有 1、placement(top、left、right、bottom)显示位置
-              2、content内容文本
+oneTooltip组件 属性有 1、placement(top、left、right、bottom)显示位置
+                    2、content内容文本
 
 #例子
-<tooltip placement="right" content="提示内容">自定义内容</tooltip>
+<one-Tooltip placement="right" content="提示内容"><div>内容文本</div></one-Tooltip>
 
 ```
