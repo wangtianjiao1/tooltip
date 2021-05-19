@@ -34,7 +34,6 @@ export default {
       }
   },
   mounted() {
-    console.log(this.$refs.header);
     this.tooltipHeight = this.$refs.tooltip.offsetHeight
     this.tooltipWidth = this.$refs.tooltip.offsetWidth
     this.containerHeight = this.$refs.container.offsetHeight

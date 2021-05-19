@@ -4,11 +4,17 @@
 
 ``` bash
 # install dependencies
-npm install
+npm i mine-tooltip
 
-# serve with hot reload at localhost:8080
-npm run dev
+# 注册
+import tooltip from 'mine-tooltip'
+Vue.use(tooltip)
 
-# build for production with minification
-npm run build
+#使用
+tooltip 属性有 1、placement(top、left、right、bottom)显示位置
+              2、content内容文本
+
+#例子
+<tooltip placement="right" content="提示内容">自定义内容</tooltip>
+
 ```
