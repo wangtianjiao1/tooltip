@@ -1,5 +1,5 @@
 {
-  "name": "one-tooltip",
+  "name": "ne-tooltip",
   "description": "A simple tooltip component",
   "version": "1.0.1",
   "author": "wangtianjiao",
@@ -28,6 +28,7 @@
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "mine-tooltip": "^1.0.0",
+    "one-tooltip": "^1.0.1",
     "vue": "^2.5.11",
     "vue-router": "^3.5.1"
   },

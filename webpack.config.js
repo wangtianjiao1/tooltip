@@ -3,16 +3,14 @@ var webpack = require('webpack')
 
 const NODE_ENV = process.env.NODE_ENV
 module.exports = {
-  // entry: './src/main.js',
   entry: NODE_ENV === 'development' ? './src/main.js' : './index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    // filename: 'build.js',
-    filename: 'one-tooltip.js',
+    publicPath: '/dist/', // 打包后的文件夹根目录
+    filename: 'one-tooltip.js', // 与package.json文件中的main一致，并需要修改index.html中的引入的script名称
     library: 'one-tooltip', // 使用require时的模块名
     libraryTarget: 'umd', // 指定输出格式
-    umdNamedDefine: true // 会对 UMD 的构建过程中的 AMD 模块进行命名。否则就使用匿名的 define
+    umdNamedDefine: true // 会对UMD的构建过程中的AMD模块进行命名。否则就使用匿名的 define
   },
   module: {
     rules: [
@@ -36,7 +34,7 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           plugins: ['syntax-dynamic-import'],
-          presets: ['es2015']
+          presets: ['es2015'] // Es6无法正常编译为Es5时添加并建.babelrc文件
         },
         exclude: /node_modules/
       },
@@ -52,7 +50,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname,'src')
+      '@': path.resolve(__dirname,'src') // 别名，引入时src用@替换
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -64,7 +62,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  // devtool: '#eval-source-map'
+  // devtool: '#eval-source-map' // 生产环境去掉，只在开发环境调式
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -87,5 +85,5 @@ if (process.env.NODE_ENV === 'production') {
     })
   ])
 } else {
-    module.exports.devtool = '#eval-source-map'
+    module.exports.devtool = '#eval-source-map' // 在开发环境调式
 }
